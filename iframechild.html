@@ -1,0 +1,48 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Child IFrame</title>
+    <style type="text/css">
+        body {
+            background-color: beige;
+        }
+
+        .iframeForm label {
+            width: 200px;
+            display: inline-block;
+        }
+
+        .iframeForm input {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<form class="iframeForm">
+    <button id="login-button1" type="button">Login1</button><br/><br/>
+    <label for="email-input">Geef jouw email in:</label>
+    <input id="email-input" type="text"/>
+    <br/>
+
+    <label for="naam-input">Geef jouw naam in:</label>
+    <input id="naam-input" type="text"/>
+    <br/>
+
+    <label for="voornaam-input">Geef jouw voornaam in:</label>
+    <input id="voornaam-input" type="text"/>
+    <br/>
+
+    <button id="login-button2" type="button">Login2</button>
+    <button id="registreer-button" type="button">Registreer</button>
+</form>
+
+<script src="http://localhost:81/js/be/delijn/site/library/delijn-postmessage.js"></script>
+<script type="application/javascript">
+    (function () {
+        be.delijn.initOpenModal(true, "login-button1", "registreer-button", "email-input", "naam-input", "voornaam-input", "http://localhost:9082");
+        be.delijn.initOpenModal(true, "login-button2", "registreer-button", "email-input", "naam-input", "voornaam-input", "http://localhost:9082");
+    })();
+</script>
+</body>
+</html>
